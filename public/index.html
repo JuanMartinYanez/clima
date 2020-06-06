@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clima App Web</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/aos/aos.css" />
+  <link href="css/style.css" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg  bg-ligth static-top navbar-clima">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ing. Juan Martín Yánez</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="mailto:juanmartinyanez@nikolasoft.com">juanmartinyanez@nikolasoft.com
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container container-clima">
+    <div class="row row-maxwidth row-maxwidth2">
+      <div class="col-lg-12 text-center col-noarginr">
+        <img data-aos="flip-right" data-aos-duration="2000" id="logo-clima" class="mt-4" src="images/logo.svg"></img>
+        <p data-aos="fade-up" data-aos-duration="1500" class="lead mt-4 p-clima">POR FAVOR SELECCIONA TU CIUDAD</p>
+
+        <div data-aos="fade-up" data-aos-duration="1500" class="form-group form-group-clima text-center">
+          <select class="form-control form-control-clima" id="select1">
+            <option selected="selected">Cuenca</option>
+            <option>Buenos Aires</option>
+            <option>New York</option>
+            <option>Guayaquil</option>
+            <option>Quito</option>
+            <option>Dubai</option>
+            <option>Montevideo</option>
+            <option>Santiago</option>
+            <option>Mexico</option>
+            <option>Sidney</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row mt-4 row-clima row-maxwidth">
+
+
+      <div class="col-12 col-nowrap">
+        <p data-aos="fade-up" data-aos-duration="1500" class="lead mt-4 p-clima2 elem-inline">NÚMERO DE DIAS ANTERIORES</p> <img data-aos="fade-up" data-aos-duration="1500" class="img-arrow elem-inline"
+          src="images/triangle.svg"></img>
+
+
+        <div data-aos="fade-up" data-aos-duration="1500" class="form-group form-group-clima text-center">
+          <select class="form-control form-control-clima" id="select2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option selected="selected">5</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-4 row-clima row-maxwidth">
+
+
+      <div class="col-12 elem-inline col-nowrap">
+        <p data-aos="fade-up" data-aos-duration="1500" class="lead mt-4 p-clima2 elem-inline">NÚMERO DE DIAS POSTERIORES</p> <img data-aos="fade-up" data-aos-duration="1500" class="img-arrow elem-inline"
+          src="images/triangle.svg"></img>
+
+        <div data-aos="fade-up" data-aos-duration="1500" class="form-group form-group-clima text-center">
+          <select class="form-control form-control-clima" id="select3">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option selected="selected">7</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="col-12">
+        <button data-aos="fade-up" data-aos-duration="1500" type="button" class="btn button-clima" id="bGenerar">Generar</button>
+      </div>
+    </div>
+
+    <div class="row row-maxwidth" data-aos="flip-right" data-aos-duration="2000">
+
+      <div class="col-12 text-cente col-jumbo">
+        <div class="jumbotron jumbotron-fluid text-center mt-4">
+
+          <div class="row">
+            <div class="col-6 text-right col-resultados">
+              <img id="img120917" class="mt-4 imgState" src="images/state1.svg"></img>
+            </div>
+
+            <div class="col-6 text-left">
+
+              <p id="pTempGeneral" class="lead p-clima3">MIER, 03 JUNIO</p>
+              <hr class="hr-clima" style="width:140px;text-align:left;margin-left:0">
+              <p id="pTemp" class="lead p-clima4">20<span class="span-clima">&#176;</span>C</p>
+              <p id="pTempGeneral2" class="lead p-clima3">CUENCA</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+
+    <!-- Copyright -->
+    <div class="container container-footer">
+
+      <div class="row row-footer">
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="50" id="col4" class="col-md-1 text-center col-mini"><h6 class="h-dia" id="h4">VIERNES</h6><h6 class="h-dia2" id="h42">30 DE MAYO</h6><img id="img4" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p4">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="100" id="col3" class="col-md-1 text-center col-mini col-impar"><h6 class="h-dia" id="h3">VIERNES</h6><h6 class="h-dia2" id="h32">30 DE MAYO</h6><img id="img3" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p3">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="150" id="col2" class="col-md-1 text-center col-mini"><h6 class="h-dia" id="h2">VIERNES</h6><h6 class="h-dia2" id="h2j">30 DE MAYO</h6><img id="img2" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p2">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="200" id="col1" class="col-md-1 text-center col-mini col-impar"><h6 class="h-dia" id="h1">VIERNES</h6><h6 class="h-dia2" id="h12">30 DE MAYO</h6><img id="img1" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p1">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="250" id="col0" class="col-md-1 text-center col-mini col-mini2"><h6 class="h-dia" id="h0">VIERNES</h6><h6 class="h-dia2" id="h02">30 DE MAYO</h6><img id="img0" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p0">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="300" id="col00"  class="col-md-1 text-center col-mini col-impar"><h6 class="h-dia" id="h00">VIERNES</h6><h6 class="h-dia2" id="h002">30 DE MAYO</h6><img id="img00" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p00">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="350" id="col11"  class="col-md-1 text-center col-mini"><h6 class="h-dia" id="h11">VIERNES</h6><h6 class="h-dia2" id="h112">30 DE MAYO</h6><img id="img11" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p11">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="400" id="col22"  class="col-md-1 text-center col-mini col-impar"><h6 class="h-dia" id="h22">VIERNES</h6><h6 class="h-dia2" id="h222">30 DE MAYO</h6><img id="img22" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p22">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="450" id="col33" class="col-md-1 text-center col-mini"><h6 class="h-dia" id="h33">VIERNES</h6><h6 class="h-dia2" id="h332">30 DE MAYO</h6><img id="img33" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p33">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="500" id="col44" class="col-md-1 text-center col-mini col-impar"><h6 class="h-dia" id="h44">VIERNES</h6><h6 class="h-dia2" id="h442">30 DE MAYO</h6><img id="img44" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p44">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="550" id="col55" class="col-md-1 text-center col-mini"><h6 class="h-dia" id="h55">VIERNES</h6><h6 class="h-dia2" id="h552">30 DE MAYO</h6><img id="img55" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p55">20<span class="span-clima">&#176;</span>C</p></img></div>
+        <div data-aos="flip-right" data-aos-duration="2000" data-aos-delay="600" id="col66" class="col-md-1 text-center col-mini col-mini3 col-impar"><h6 class="h-dia" id="h66">VIERNES</h6><h6 class="h-dia2" id="h662">30 DE MAYO</h6><img id="img66" class="imgState2" src="images/state1.svg"> <p class="lead p-clima5" id="p66">20<span class="span-clima">&#176;</span>C</p></img></div>
+      </div>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/moment/moment.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
