@@ -6,6 +6,7 @@ var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sab
 var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",]
 
 var today = new Date();
+
 var dayName = days[today.getDay()];
 var monthName = months[today.getMonth()];
 var dayNumber = today.getDate()

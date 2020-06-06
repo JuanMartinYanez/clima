@@ -348,6 +348,19 @@ button:hover{
 
 }
 
+@media (min-width: 767px) {
+    .h-dia{
+        font-size: 0.75rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .h-dia{
+        font-size: 1rem;
+    }
+  }
+
+
 
 
 
