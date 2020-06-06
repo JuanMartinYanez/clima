@@ -156,7 +156,7 @@ function setTempDays() {
             var tempPost;
             
 
-            for (let index = 1; index < valuePostDays; index++) {
+            for (let index = 1; index <= valuePostDays; index++) {
                 var dateTest = new Date(response1["daily"][index].dt * 1000);
 
                 tempPost=Math.round(Number(response1["daily"][index].temp.day)) 

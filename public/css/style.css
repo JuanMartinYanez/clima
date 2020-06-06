@@ -316,6 +316,11 @@ button:hover{
 
 @media (max-width: 768px) {
 
+    #col0{
+           
+        border-bottom: 2px solid #ffc800;;
+    }
+
     .hr-clima{
         width: 30vw !important;
     }
