@@ -42,7 +42,7 @@ $(document).ready(function () {
     });
 
 
-    setDaysNames(dayNumber);
+    setDaysNames(today.getDay());
 
     $("#pTempGeneral").html(dayName + ", " + dayNumber + " de " + monthName);
 
@@ -87,6 +87,7 @@ function setDaysNames(dayNumber) {
     }
 
     for (let index = 0; index < 7; index++) {
+
         if (dayNumber2 == 6) {
             dayNumber2 = 0
         } else {
