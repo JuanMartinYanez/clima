@@ -73,13 +73,6 @@ describe('Core functions tests', function(){
     //     var todayCompleyeDate = dayName + ", " + dayNumber + " de " + monthName
     //     assert.deepEqual(getsetTodayDataResult[0],todayCompleyeDate)
     // })
-
-
-
-    
-
-    
-
 })
 
 
