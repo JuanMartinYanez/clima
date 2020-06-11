@@ -12,14 +12,14 @@ const gethideShowForecastDaysResult = core_functions.hideShowForecastDays()
 const getsetHistoricDaysNamesResult = core_functions.setHistoricDaysNames()
 const getsetForecastDaysNamesResult = core_functions.setForecastDaysNames()
 const gettestsetTodayDataResult = core_functions.testsetTodayData()
-const gettesthttpForecastRequestResult = core_functions.testhttpForecastRequest()
+// const gettesthttpForecastRequestResult = core_functions.testhttpForecastRequest()
 
 
-const class_city = require('../js/city.js')
+// const class_city = require('../js/city.js')
 
-let city = new class_city(0)
+// let city = new class_city(0)
 
-console.log(city);
+// console.log(city);
 
 
 // const getsetTodayDataResult = core_functions.setTodayData(city)

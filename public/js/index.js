@@ -32,7 +32,7 @@ function initializeDefaultData(){
 
 function setSelectsListeners(){
     $("#select1").on("change", function () {
-        CITY_POSITION = CITIES_NAMES.findIndex(city => city === this.value)
+    CITY_POSITION = CITIES_NAMES.findIndex(city => city === this.value)
     });
 
     $("#select2").on("change", function () {

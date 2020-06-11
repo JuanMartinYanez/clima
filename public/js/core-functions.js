@@ -5,7 +5,11 @@ const YEAR_MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Jul
 const TODAY_DATE_ID_ELEMENT = "pTempGeneral"
 const TODAY_CITY_ID_ELEMENT = "pTempGeneral2"
 const RESULTS_ZONE_REFERENCE_ID_ELEMENT = "img120917"
-const CITY_POSITION = 0
+const OPENWEATHER_APP_ID = "8af2762f745c2900c429020e1f75df97";
+const TODAY_IMG_TEMPERATURE_ID_ELEMENT = "120917"
+const TODAY_TEMPERATURE_ID_ELEMENT = "pTemp"
+
+var CITY_POSITION = 0
 
 var INITIALIZATION_STATE = false;
 var HISTORIC_NUMBER_DAYS = 5;
@@ -234,9 +238,6 @@ exports.testsetTodayData = testsetTodayData
 
 
 //*********The next importation is for unitary tests purposes only********* 
-const OPENWEATHER_APP_ID = "8af2762f745c2900c429020e1f75df97";
-const TODAY_IMG_TEMPERATURE_ID_ELEMENT = "120917"
-const TODAY_TEMPERATURE_ID_ELEMENT = "pTemp"
 
 // const core_functions = require('../js/core-functions.js')
 
@@ -285,6 +286,9 @@ function httpForecastRequest(city) {
                 setImageDayTemperature(imageId, actualDayTemperature)
                 setLabelDayTemperature(imageId, actualDayTemperature)
             }
+            return responseRequest
+
+        
         }
     }
 }
