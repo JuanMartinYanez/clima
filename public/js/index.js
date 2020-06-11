@@ -1,3 +1,4 @@
+
 $(document).ready(function () {   
     //Animations initialization 
     AOS.init({

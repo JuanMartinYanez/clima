@@ -1,4 +1,8 @@
 const OPENWEATHER_APP_ID = "8af2762f745c2900c429020e1f75df97";
+const TODAY_IMG_TEMPERATURE_ID_ELEMENT = "120917"
+const TODAY_TEMPERATURE_ID_ELEMENT = "pTemp"
+
+// const core_functions = require('../js/core-functions.js')
 
 function httpTodayRequest(city) {
     let cityRequest = city
@@ -78,12 +82,8 @@ function httpHistoricRequest(city, dayTimeStamp) {
         }
 
     }
-
-
-
-
-
-
 }
+
+// exports.httpTodayRequest = httpTodayRequest
 
 
