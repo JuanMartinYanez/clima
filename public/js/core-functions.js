@@ -14,9 +14,22 @@ var FORECAST_NUMBER_DAYS = 7;
 var MAX_HISTORIC_NUMBER_DAYS = 5;
 var MAX_FORECAST_NUMBER_DAYS = 7;
 
-
+//*********The next importation is for unitary tests purposes only********* 
+const CITIES_NAMES = ["Cuenca", "Buenos Aires", "New York", "Guayaquil", "Quito", "Dubai", "Montevideo", "Santiago", "Mexico", "Sidney"];
+const CITIES_LATITUDES = ["-2.897695", "-34.595398", "40.798656", "-2.194350", "-0.176383", "25.096995", "-34.830600", "-33.458725", "19.429531", "-33.879129"];
+const CITIES_LONGITUDES = ["-79.005055", "-58.495108", "-73.952968", "-79.892224", "78.480021", "55.174138", "-56.203491", "-70.639491", "-99.134102", "151.206602"];
 
 //Core classes of the web system
+class City {
+    constructor(position) {
+        this.latitude = CITIES_LATITUDES[position];
+        this.longitude = CITIES_LONGITUDES[position];
+        this.name = CITIES_NAMES[position];
+    }
+}
+//*********End of importation is for unitary tests purposes only*********
+
+
 
 //Core functions of the web system
 function scrollToResultsZone() {
@@ -75,6 +88,11 @@ function setTodayData(city) {
     httpTodayRequest(city);
 
     return resultsTest
+}
+
+function testsetTodayData(){
+    let cityTest = new City(0) 
+    return setTodayData(cityTest)
 }
 
 function setForecastDaysNames() {
@@ -212,6 +230,105 @@ exports.setTodayData = setTodayData
 exports.setImageDayTemperature = setImageDayTemperature
 exports.setLabelTodayDayTemperature = setLabelTodayDayTemperature
 exports.setLabelDayTemperature = setLabelDayTemperature
+exports.testsetTodayData = testsetTodayData
+
+
+//*********The next importation is for unitary tests purposes only********* 
+const OPENWEATHER_APP_ID = "8af2762f745c2900c429020e1f75df97";
+const TODAY_IMG_TEMPERATURE_ID_ELEMENT = "120917"
+const TODAY_TEMPERATURE_ID_ELEMENT = "pTemp"
+
+// const core_functions = require('../js/core-functions.js')
+
+function httpTodayRequest(city) {
+    let cityRequest = city
+    let Http = new XMLHttpRequest();
+    let urlRequest = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + cityRequest.latitude + '&lon=' + cityRequest.longitude + '&units=metric&appid=' + OPENWEATHER_APP_ID;
+
+    Http.open("GET", urlRequest);
+    Http.send();
+    let responseRequest;
+    let imageId=TODAY_IMG_TEMPERATURE_ID_ELEMENT;
+    let pID=TODAY_TEMPERATURE_ID_ELEMENT;
+    let actualDayTemperature;
+
+    Http.onreadystatechange = (e) => {
+        if (Http.readyState == 4 && Http.status == 200) {
+            responseRequest = JSON.parse(Http.responseText)
+            actualDayTemperature = Math.round(Number(responseRequest["current"].temp))
+            setImageDayTemperature(imageId, actualDayTemperature)
+            setLabelTodayDayTemperature(pID, actualDayTemperature)
+        }
+    }
+}
+
+//A request can either be a forecastRequest or a historicRequest, it defines the structure of the requests URL
+function httpForecastRequest(city) {
+    let cityRequest = city
+    let Http = new XMLHttpRequest();
+    let urlRequest = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + cityRequest.latitude + '&lon=' + cityRequest.longitude + '&units=metric&appid=' + OPENWEATHER_APP_ID;
+
+    Http.open("GET", urlRequest);
+    Http.send();
+    let responseRequest;
+    let imageId;
+    let actualDayTemperature;
+
+    Http.onreadystatechange = (e) => {
+        if (Http.readyState == 4 && Http.status == 200) {
+            responseRequest = JSON.parse(Http.responseText)
+            for (let index = 1; index <= FORECAST_NUMBER_DAYS; index++) {
+                imageId = (index - 1).toString() + (index - 1).toString()
+                
+                actualDayTemperature = Math.round(Number(responseRequest["daily"][index].temp.day))
+                
+                setImageDayTemperature(imageId, actualDayTemperature)
+                setLabelDayTemperature(imageId, actualDayTemperature)
+            }
+        }
+    }
+}
+
+function testhttpForecastRequest(){
+    let cityTest = new City(0) 
+    return httpForecastRequest(cityTest)
+}
+
+
+function httpHistoricRequest(city, dayTimeStamp) {
+    let cityRequest = city
+    var historicDayTimeStamp;
+
+    for (let index = 0; index < HISTORIC_NUMBER_DAYS; index++) {
+        historicDayTimeStamp = dayTimeStamp - (84400 * (index + 1)) //Generating timestamps for previous days
+        let Http = new XMLHttpRequest();
+        let urlRequest = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=' + cityRequest.latitude + '&lon=' + cityRequest.longitude + '&dt=' + historicDayTimeStamp + '&units=metric&appid=' + OPENWEATHER_APP_ID;
+        Http.open("GET", urlRequest);
+        Http.send();
+        let responseRequest;
+        let imageId;
+        let actualDayTemperature;
+        Http.onreadystatechange = (e) => {
+
+            if (Http.readyState == 4 && Http.status == 200) {
+                responseRequest = JSON.parse(Http.responseText);
+                actualDayTemperature=Math.round(Number(responseRequest["hourly"][0].temp));
+                imageId=index;
+                setImageDayTemperature(imageId, actualDayTemperature)
+                setLabelDayTemperature(imageId, actualDayTemperature)
+
+
+            }
+
+        }
+
+    }
+}
+
+//*********End of importation is for unitary tests purposes only*********
+
+
+
 
 
 

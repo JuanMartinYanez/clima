@@ -11,6 +11,9 @@ const gethideShowHistoricDaysResult = core_functions.hideShowHistoricDays()
 const gethideShowForecastDaysResult = core_functions.hideShowForecastDays()
 const getsetHistoricDaysNamesResult = core_functions.setHistoricDaysNames()
 const getsetForecastDaysNamesResult = core_functions.setForecastDaysNames()
+const gettestsetTodayDataResult = core_functions.testsetTodayData()
+const gettesthttpForecastRequestResult = core_functions.testhttpForecastRequest()
+
 
 const class_city = require('../js/city.js')
 
@@ -62,17 +65,14 @@ describe('Core functions tests', function(){
         assert.deepEqual(getsetForecastDaysNamesResult, validIdsElementsCompleteDate.splice(slicePosition,validIdsElementsCompleteDate.length))
     })
 
+    it('testsetTodayData should generate valid results', function(){
 
-    // it('setTodayData should generate correct todays complete date', function(){
-    //     let todayDate = new Date();
-    //     const WEEK_DAYS_NAMES = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-    //     const YEAR_MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    //     var dayName = WEEK_DAYS_NAMES[todayDate.getDay()];
-    //     var monthName = YEAR_MONTHS[todayDate.getMonth()];
-    //     var dayNumber = todayDate.getDate()
-    //     var todayCompleyeDate = dayName + ", " + dayNumber + " de " + monthName
-    //     assert.deepEqual(getsetTodayDataResult[0],todayCompleyeDate)
-    // })
+        var validResults = ['Jueves, 11 de Junio','Cuenca']
+       
+        assert.deepEqual(gettestsetTodayDataResult, validResults)
+    })
+
+
 })
 
 
