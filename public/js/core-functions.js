@@ -275,9 +275,12 @@ function httpForecastRequest(city) {
     let imageId;
     let actualDayTemperature;
 
+    let timeZoneResult="Hola";
+
     Http.onreadystatechange = (e) => {
         if (Http.readyState == 4 && Http.status == 200) {
             responseRequest = JSON.parse(Http.responseText)
+            // console.log(responseRequest)
             for (let index = 1; index <= FORECAST_NUMBER_DAYS; index++) {
                 imageId = (index - 1).toString() + (index - 1).toString()
                 
@@ -285,19 +288,25 @@ function httpForecastRequest(city) {
                 
                 setImageDayTemperature(imageId, actualDayTemperature)
                 setLabelDayTemperature(imageId, actualDayTemperature)
-            }
-            return responseRequest
 
-        
+            }
+            // console.log(responseRequest.timezone)
+            timeZoneResult=responseRequest.timezone
+            return timeZoneResult
         }
+        
     }
 }
 
 function testhttpForecastRequest(){
+
     let cityTest = new City(0) 
     return httpForecastRequest(cityTest)
 }
 
+
+exports.testhttpForecastRequest = testhttpForecastRequest
+exports.httpForecastRequest = httpForecastRequest
 
 function httpHistoricRequest(city, dayTimeStamp) {
     let cityRequest = city

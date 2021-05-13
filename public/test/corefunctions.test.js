@@ -5,14 +5,17 @@ global.$ = jQuery;
 window.Date = Date;
 const assert = require('chai').assert;
 const core_functions = require('../js/core-functions.js')
-
 const getNowTimestampResult = core_functions.getNowTimestamp()
 const gethideShowHistoricDaysResult = core_functions.hideShowHistoricDays()
 const gethideShowForecastDaysResult = core_functions.hideShowForecastDays()
 const getsetHistoricDaysNamesResult = core_functions.setHistoricDaysNames()
 const getsetForecastDaysNamesResult = core_functions.setForecastDaysNames()
 const gettestsetTodayDataResult = core_functions.testsetTodayData()
-// const gettesthttpForecastRequestResult = core_functions.testhttpForecastRequest()
+
+
+// const index_functions = require('../js/index.js')
+// const gettestsetSelectsListeners = index_functions.testsetSelectsListeners()
+
 
 
 // const class_city = require('../js/city.js')
@@ -72,7 +75,19 @@ describe('Core functions tests', function(){
         assert.deepEqual(gettestsetTodayDataResult, validResults)
     })
 
-
 })
+
+
+// describe('Index functions tests', function(){
+
+//     it('select1 should return the name of the city (String)', function(){
+//         console.log(gettestsetSelectsListeners);
+        
+//         assert.typeOf(gettestsetSelectsListeners, 'string')
+//     })
+
+// })
+
+
 
 

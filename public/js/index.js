@@ -1,3 +1,5 @@
+const city = new City(CITY_POSITION);
+
 
 $(document).ready(function () {   
     //Animations initialization 
@@ -45,11 +47,27 @@ function setSelectsListeners(){
     });
 }
 
+
+function testsetSelectsListeners(){
+    
+    let selectedCityName="Prueba"
+//    let selectedCityName= $("#select1 :selected").val()
+
+//    let selectedNumberOfHistoricDays= Number($("#select2 :selected").val())
+//    testsetSelectsListenersResults.push(selectedCityName)
+//    let selectedNumberOfForecastDays= Number($("#select3 :selected").val())
+//    testsetSelectsListenersResults.push(selectedCityName)
+
+   return selectedCityName
+}
+
+// exports.testsetSelectsListeners = testsetSelectsListeners
+
 function setNewData(){
-    let city = new City(CITY_POSITION);
-    setTodayData(city)
-    httpForecastRequest(city)
-    httpHistoricRequest(city,getNowTimestamp())
+    var citiNewData = new City(CITY_POSITION)
+    setTodayData(citiNewData)
+    httpForecastRequest(citiNewData)
+    httpHistoricRequest(citiNewData,getNowTimestamp())
     setForecastDaysNames();
     hideShowForecastDays();
     setHistoricDaysNames();
